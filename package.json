@@ -3,11 +3,12 @@
   "type": "module",
   "version": "1.0.0",
   "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
+    "dev": "deno run -A --unstable npm:astro dev",
+    "start": "deno run -A --unstable npm:astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "deno run -A --unstable ./dist/server/entry.mjs",
+    "astro": "astro",
+    "format": "deno fmt && prettier --write ."
   },
   "dependencies": {
     "@astrojs/deno": "^5.0.1",
