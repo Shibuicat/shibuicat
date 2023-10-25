@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 const pageTitle = "Posts";
 
 const postsFetchResponse = await fetch(
-  `${Deno.env.get("API_ENDPOINT")}api/mediumpost`
+  `${import.meta.env.API_ENDPOINT}api/mediumpost`
 );
 const posts = await postsFetchResponse.json();
 ---
