@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  font-family: "Josefin Sans", sans-serif;
   max-width: 800px;
   margin: 0 auto;
   text-align: justify;
@@ -92,7 +93,7 @@ a:focus {
 
 /* Theme Icon */
 html.light {
-  background-color: #fdebf3;
+  background-color: #fafafa;
   color: #1e1e2e;
 }
 

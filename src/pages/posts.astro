@@ -1,12 +1,11 @@
 ---
-import Card from "../components/Card.astro";
 import Layout from "../layouts/Layout.astro";
 const pageTitle = "Posts";
 
-const postsFetchResponse = await fetch(
-  `${Deno.env.get("API_ENDPOINT")}api/mediumpost`
-);
-const posts = await postsFetchResponse.json();
+// const postsFetchResponse = await fetch(
+//   `${Deno.env.get("API_ENDPOINT")}api/mediumpost`
+// );
+// const posts = await postsFetchResponse.json();
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -15,11 +14,11 @@ const posts = await postsFetchResponse.json();
   </div>
   <h2>Blog</h2>
   <ul role="list" class="link-card-grid">
-    {
+    <!-- {
       posts.map((item) => (
         <Card href={item.uri} image="/blog.png" title={item.title} body="" />
       ))
-    }
+    } -->
   </ul>
   <!-- <h2>YouTube</h2>
     <ul role="list" class="link-card-grid">
