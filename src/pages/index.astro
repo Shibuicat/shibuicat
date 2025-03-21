@@ -3,4 +3,18 @@ import Layout from "../layouts/Layout.astro";
 const pageTitle = "Shibuicat";
 ---
 
-<Layout pageTitle={pageTitle}> Homepage </Layout>
+<Layout pageTitle={pageTitle}>
+  <div class="h-100 flex justify-center items-center">
+    <div
+      class="container my-auto rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-zinc-400 p-5"
+    >
+      <p>
+        Being a software developer, i usually find myself struggling create real
+        value in life. What's the point of all the OOP, SOLID, Microservices...
+        when you cannot turn them into something useful beside my 9/5 coporate
+        job? Indeed, my 9/5 coporate job create value but for someone else but i feel like shit. Shibuicat is my project trying to mitigate that problem myself, i
+        hope it could inspire someone else out there and help people with the same problem i have.
+      </p>
+    </div>
+  </div>
+</Layout>

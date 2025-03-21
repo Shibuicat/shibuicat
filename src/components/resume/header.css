@@ -1,0 +1,19 @@
+.profile-header-name {
+	display: inline;
+}
+
+.profile-picture-container {
+	overflow: hidden;
+}
+
+.profile-picture {
+	border-radius: 50%;
+	width: 150px;
+	max-height: 150px;
+	display: block;
+	margin: 0 auto;
+}
+
+img.profile-picture {
+	object-fit: cover;
+}

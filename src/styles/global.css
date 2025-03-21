@@ -1,14 +1,19 @@
 /* Global styles */
+/* tailwind first */
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* override comes after */
 html {
   background-color: #1e1e2e;
   color: #fdebf3;
+  min-height: 100vh;
 }
 
 body {
   font-family: "Josefin Sans", sans-serif;
-  max-width: 800px;
   margin: 0 auto;
   text-align: justify;
+  /* max-width: 800px; */
 }
 
 /* Headings */
@@ -92,36 +97,36 @@ a:focus {
 }
 
 /* Theme Icon */
-html.light {
+html:not(.dark) {
   background-color: #fafafa;
   color: #1e1e2e;
 }
 
-.light .title-link a {
+html:not(.dark) .title-link a {
   color: #1e1e2e;
 }
 
-.light .card-title {
+html:not(.dark) .card-title {
   color: #1e1e2e;
 }
 
-.light .card-txt {
+html:not(.dark) .card-txt {
   color: #1e1e2e;
 }
 
-.light .nav-links a {
+html:not(.dark) .nav-links a {
   color: #1e1e2e;
 }
 
-.light .link-card > a {
+html:not(.dark) .link-card > a {
   color: #1e1e2e;
 }
 
-.light button {
+html:not(.dark) button {
   color: #1e1e2e;
 }
 
-.light button:hover {
+html:not(.dark) button:hover {
   color: #fdebf3;
 }
 

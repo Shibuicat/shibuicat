@@ -1,0 +1,8 @@
+---
+interface Props{
+ skills: string[]
+}
+
+const {skills} = Astro.props;
+---
+<p>- {skills.join(', ')}</p>

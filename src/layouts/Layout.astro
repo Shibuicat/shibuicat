@@ -32,22 +32,22 @@ const { pageTitle } = Astro.props;
     <title>{pageTitle}</title>
     <ClientRouter />
   </head>
-  <body>
+  <body class="w-3/5">
     <Header />
     <main transition:animate={fade({ duration: "0.4s" })}>
       <slot />
-      <Footer />
     </main>
+    <Footer />
     <script>
       function colorMode() {
         if (
-          localStorage.theme === "light" ||
+          localStorage.theme === "dark" ||
           (!("theme" in localStorage) &&
-            window.matchMedia("(prefers-color-scheme: light)").matches)
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
         ) {
-          document.documentElement.classList.add("light");
+          document.documentElement.classList.add("dark");
         } else {
-          document.documentElement.classList.remove("light");
+          document.documentElement.classList.remove("dark");
         }
       }
 
