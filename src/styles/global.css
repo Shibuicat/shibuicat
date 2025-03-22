@@ -97,36 +97,36 @@ a:focus {
 }
 
 /* Theme Icon */
-html:not(.dark) {
+:global(.dark) {
   background-color: #fafafa;
   color: #1e1e2e;
 }
 
-html:not(.dark) .title-link a {
+:global(.dark) .title-link a {
   color: #1e1e2e;
 }
 
-html:not(.dark) .card-title {
+:global(.dark) .card-title {
   color: #1e1e2e;
 }
 
-html:not(.dark) .card-txt {
+:global(.dark) .card-txt {
   color: #1e1e2e;
 }
 
-html:not(.dark) .nav-links a {
+:global(.dark) .nav-links a {
   color: #1e1e2e;
 }
 
-html:not(.dark) .link-card > a {
+:global(.dark) .link-card > a {
   color: #1e1e2e;
 }
 
-html:not(.dark) button {
+:global(.dark) button {
   color: #1e1e2e;
 }
 
-html:not(.dark) button:hover {
+:global(.dark) button:hover {
   color: #fdebf3;
 }
 
