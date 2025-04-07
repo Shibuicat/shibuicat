@@ -1,52 +1,55 @@
 ---
-import "./header.css";
-interface Props {
-  profilePicture: string;
-  name: string;
-  title: string;
-  workedSince: string;
+interface Social {
+  linkedIn: string;
+  github: string;
 }
 
-const { profilePicture, name, title, workedSince } = Astro.props;
-const currentDate: any = new Date();
-const startDate: any = new Date(workedSince);
-const diffTime: number = Math.abs(currentDate - startDate);
-const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+interface Props {
+  phone: string;
+  email: string;
+  address: string;
+  social: Social;
+}
 
-const totalYears = Math.floor(diffDays / 365);
-const totalMonths = Math.floor(Math.floor(diffDays % 365) / 30);
-
-const yoeText = function () {
-  if (totalYears == 0) {
-    return `${totalMonths} Months`;
-  } else {
-    if (totalMonths == 0) {
-      return `${totalYears} Years`;
-    }
-
-    return `${totalYears} Years ${totalMonths} Months`;
-  }
-};
+const personalInfo = Astro.props;
+const mailTo = `mailto:${personalInfo.email}`;
+const callNumber = `tel:${personalInfo.phone}`;
+const linkedIn = `https://www.linkedin.com/in/${personalInfo.social.linkedIn}`;
+const github = `https://github.com/${personalInfo.social.github}`;
 ---
 
-<div
-  class="grid grid-cols-1 gap-4 md:grid-cols-4 mb-4 bg-zinc-800 cv-header py-2"
->
-  <div class="flex col-span-1 profile-picture-container">
-    <img
-      class="profile-picture aspect-square rounded-full border-solid border-4"
-      src={profilePicture}
-    />
-  </div>
-  <div
-    class="flex flex-col justify-center col-span-1 md:col-span-3 items-center md:items-start"
-  >
-    <div class="text-4xl font-bold">{name}</div>
-    <div class="text-2xl">
-      <span class="text-gradient">{title}</span>
-    </div>
-    <div class="text-xl">
-      <span class="text-xl">{yoeText()} of experience</span>
-    </div>
-  </div>
+<div class="w-full">
+  <p>
+    <a href={callNumber} class="flex align-items-center space-x-2">
+      <span class="material-symbols-outlined"> call </span>
+      <span>{personalInfo.phone}</span>
+    </a>
+  </p>
+  <p>
+    <a href={mailTo} class="flex align-items-center space-x-2">
+      <span class="material-symbols-outlined"> mail </span>
+      <span>{personalInfo.email}</span>
+    </a>
+  </p>
+  <p class="flex align-items-center space-x-2">
+    <span class="material-symbols-outlined">location_on</span>
+    <span>{personalInfo.address}</span>
+  </p>
+  <br />
+  <p class="text-2xl flex align-items-center space-x-2">
+    {
+      personalInfo.social.linkedIn && (
+        <a target="_blank" class="hover:text-teal-900" href={linkedIn}>
+          <i class="devicon-linkedin-plain" />
+        </a>
+      )
+    }
+    {
+      personalInfo.social.github && (
+        <a class="hover:text-teal-900" target="_blank" href={github}>
+          <i class="devicon-github-plain" />
+        </a>
+      )
+    }
+  </p>
 </div>

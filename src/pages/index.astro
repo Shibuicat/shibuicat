@@ -1,20 +1,87 @@
 ---
+export const prerender = false;
 import Layout from "../layouts/Layout.astro";
+import "./index.css";
 const pageTitle = "Shibuicat";
+
+const myStatuses: Status[] = [
+  {
+    date: new Date("2025-01-01"),
+    content: `Being a software developer, i usually find myself struggling create real
+        value in life. What's the point of all the OOP, SOLID, Microservices... when
+        you cannot turn them into something useful beside my 9/5 coporate job? Indeed,
+        my 9/5 coporate job create value but for someone else but i feel like shit.
+        Shibuicat is my project trying to mitigate that problem myself, i hope it
+        could inspire someone else out there and help people with the same problem
+        i have.`,
+  },
+  {
+    date: new Date("2025-04-07"),
+    content: `Lately, I picked up new hobby and bought a new camera, it's been fun and i felt like wanted to be good at this.`,
+  },
+];
+
+type Status = {
+  date: Date;
+  content: string;
+};
+
+const getOpacity = (date: Date) => {
+  const currentDate = new Date();
+  return calculateOpacity(getDayDiff(currentDate, date));
+};
+
+const calculateOpacity = (n: number) => {
+  console.log("initial day diff", n);
+  if (n < 60) return 100;
+
+  const steps = Math.floor((n - 60) / 30);
+  const reduction = steps * 10;
+  const value = 100 - reduction;
+
+  console.log("calculated opacity: ", value);
+  return Math.max(value, 20);
+};
+
+const getDayDiff = (date1: any, date2: any) => {
+  // The number of milliseconds in one day
+  const ONE_DAY = 1000 * 60 * 60 * 24;
+
+  // Calculate the difference in milliseconds
+  const differenceMs = Math.abs(date1 - date2);
+
+  // Convert back to days and return
+  return Math.round(differenceMs / ONE_DAY);
+};
+
+// const colors: StatusColor[] = [
+//   {
+//     backgroundColorClass: "",
+//     textColorClass: "",
+//   },
+// ];
+
+// const getRandomColor = () => {};
+
+// type StatusColor = {
+//   backgroundColorClass: string;
+//   textColorClass: string;
+// };
 ---
 
 <Layout pageTitle={pageTitle}>
-  <div class="h-100 flex justify-center items-center">
-    <div
-      class="container my-auto rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-zinc-400 p-5"
-    >
-      <p>
-        Being a software developer, i usually find myself struggling create real
-        value in life. What's the point of all the OOP, SOLID, Microservices...
-        when you cannot turn them into something useful beside my 9/5 coporate
-        job? Indeed, my 9/5 coporate job create value but for someone else but i feel like shit. Shibuicat is my project trying to mitigate that problem myself, i
-        hope it could inspire someone else out there and help people with the same problem i have.
-      </p>
-    </div>
+  <div class="flex-col flex justify-center items-center gap-4">
+    {
+      myStatuses.map((x) => (
+        <div
+          class={`container my-auto rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-zinc-400 p-5 opacity-${getOpacity(x.date)}`}
+        >
+          <p>
+            <b>{`${x.date.toLocaleString("default", { month: "long" })} - ${x.date.getFullYear()} :`}</b>
+            {x.content}
+          </p>
+        </div>
+      ))
+    }
   </div>
 </Layout>
