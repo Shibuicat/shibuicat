@@ -15,10 +15,6 @@ const myStatuses: Status[] = [
         could inspire someone else out there and help people with the same problem
         i have.`,
   },
-  {
-    date: new Date("2025-04-07"),
-    content: `Lately, I picked up new hobby and bought a new camera, it's been fun and i felt like wanted to be good at this.`,
-  },
 ];
 
 type Status = {
@@ -71,13 +67,23 @@ const getDayDiff = (date1: any, date2: any) => {
 
 <Layout pageTitle={pageTitle}>
   <div class="flex-col flex justify-center items-center gap-4">
+    
+        <div
+          class={`container my-auto rounded-2xl overflow-hidden shadow-lg bg-rose-500 dark:bg-amber-600 p-5`}
+        >
+          <p>
+            <b>08 April 2025</b> 
+            It's kinda weird that the introduction of this website didn't exist till 3 months later, i really didn't know what i wanted to do with this website and didn't have a clue where i was heading at the time. However, I sense which direction that i want to go now.
+          </p>
+          <p>So, I decided that i'm done with consuming. This is kinda like my personal space where i create stuffs and share it with the world.</p>
+        </div>
     {
       myStatuses.map((x) => (
         <div
           class={`container my-auto rounded-2xl overflow-hidden shadow-lg bg-white dark:bg-zinc-400 p-5 opacity-${getOpacity(x.date)}`}
         >
           <p>
-            <b>{`${x.date.toLocaleString("default", { month: "long" })} - ${x.date.getFullYear()} :`}</b>
+        <b>{` ${x.date.getDate()} ${x.date.toLocaleString("default", { month: "long" })} ${x.date.getFullYear()} :`}</b>
             {x.content}
           </p>
         </div>
