@@ -4,6 +4,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  --email-text-color: oklch(51.4% 0.222 16.935);
+  --email-font-size: 18px;
   --background-dark: #1e1e2e;
   --background-light: #fcebf3;
   --button: #78c2ad;
@@ -391,4 +393,10 @@ html.dark {
     height: auto;
     width: 350px;
   }
+}
+
+.email{
+ color: var(--email-text-color);
+ font-weight: bold;
+ font-size: var(--email-font-size);
 }

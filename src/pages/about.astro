@@ -1,0 +1,90 @@
+---
+import Layout from "../layouts/Layout.astro";
+const pageTitle = "About";
+---
+
+<Layout title={pageTitle}>
+  <div class="gif">
+    <img width="300" height="259" alt="RaccoonSpaceGif" src="/space.webp" />
+  </div>
+  <h1>Do Tran</h1>
+  <small>Digital Craftsman (Developer)</small>
+  <h2>About</h2>
+  <p>
+    My name's Độ, from Ho Chi Minh City, Vietnam. I work as a software engineer
+    and am also a photography enthusiast. Feel free to drop me an email—we can
+    grab a coffee sometime.
+  </p>
+  <div>
+    <p>
+      I also open to work as a freelance/ remote Software Developer. You can
+      view my work and Resume below.
+    </p>
+  </div>
+
+  <div class="button">
+    <a href="/works/">
+      <button>My portfolio</button>
+    </a>
+    <a href="/resume/">
+      <button>My Resume</button>
+    </a>
+  </div>
+  <h2>Interests</h2>
+  <p>I like computer, photography, BJJ, outdoor activities and coffee.</p>
+  <h2>Contact</h2>
+  <p>
+    Email me at: <a class="email" href="mailto:tvddaman@gmail.com"
+      >tvddaman@gmail.com</a
+    >
+  </p>
+
+  <style>
+    /* small */
+    small {
+      background-color: #584966;
+      color: #fdebf3;
+      border-radius: 6px;
+      font-family: "Josefin Sans", sans-serif;
+      font-weight: 600;
+      padding: 0.3em 0.6em 0.2em;
+    }
+
+    /* Button */
+    button {
+      background: rgba(0, 0, 0, 0);
+      border: 2px solid #78c2ad;
+      border-radius: 8px;
+      font:
+        600 16px "Josefin Sans",
+        sans-serif;
+      padding: 8px 16px;
+      transition:
+        background-color 0.4s,
+        color 0.4s;
+    }
+
+    button:hover {
+      background-color: #78c2ad;
+      color: #1e1e2e;
+      cursor: pointer;
+    }
+
+    /* .button {
+      text-align: center;
+    } */
+
+    /* Skill images */
+    .link-images img {
+      margin: 16px 4px;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .link-images img {
+        height: 30px;
+        width: 30px;
+        margin: 16px 1px;
+      }
+    }
+  </style>
+</Layout>

@@ -1,52 +1,51 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Card from "../components/Card.astro";
+import Layout from "../layouts/Layout.astro";
 const pageTitle = "Works";
 ---
+
 <Layout pageTitle={pageTitle}>
-    <div class="gif">
-        <img width="300" height="259" alt="RaccoonLaptopGif" src="/laptop.webp"/>
-    </div>
-    <h2>Contributions</h2>
-    <ul role="list" class="link-card-grid">
-        <Card
-            href="https://github.com/"
-            image="/GitHub.webp"
-            title="Open-source 1"
-            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-        />
-        <Card
-            href="https://github.com/"
-            image="/GitHub.webp"
-            title="Open-source 2"
-            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-        />
-    </ul>
-    <h2>Projects</h2>
-    <ul role="list" class="link-card-grid">
-        <Card
-            href="https://github.com/"
-            image="/GitHub.webp"
-            title="Project 1"
-            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-        />
-        <Card
-            href="https://github.com/"
-            image="/GitHub.webp"
-            title="Project 2"
-            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-        />
-        <Card
-            href="https://github.com/"
-            image="/GitHub.webp"
-            title="Project 3"
-            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-        />
-        <Card
-            href="https://github.com/"
-            image="/GitHub.webp"
-            title="Project 4"
-            body="Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci"
-        />
-    </ul>
+  <div class="gif">
+    <img width="300" height="259" alt="RaccoonLaptopGif" src="/laptop.webp" />
+  </div>
+  <h2>Coding & Technical Blogging</h2>
+  <p>
+    I've been working as a software engineer since 2019 but didn't create
+    anything useful outside of coporate job ever since. Then, I realized that
+    there is so much more than just working someone else, so I started sharing
+    stuff in early 2025, here they are.
+  </p>
+  <ul role="list" class="link-card-grid">
+    <Card
+      href="https://github.com/shibuicat"
+      image="/Doguri_Pebbles_1.gif"
+      title="Open Source"
+      body="I have been working on some open-source projects that solve micro problems. Give them a star if you find them useful."
+    />
+    <Card
+      href="https://meditation.shibuicat.com/tag/coding"
+      image="/blog.webp"
+      title="Technical Blogging"
+      body="This is where I share my thoughts and experiences about coding, software development, and technology."
+    />
+  </ul>
+  <h2>Photography & Shower Thoughts</h2>
+  <p>
+    I picked up this hobby in early 2025 around the same i changed my mindset
+    and wanted to build something of my own to share with the world.
+  </p>
+  <ul role="list" class="link-card-grid">
+    <Card
+      href="https://github.com/"
+      image="/photography.webp"
+      title="Photography"
+      body="My photography work"
+    />
+    <Card
+      href="https://meditation.shibuicat.com/tag/meditation"
+      image="/Doguri_Sleeping_1.gif"
+      title="Shower Thoughts"
+      body="My random thoughts and ideas that helped me navigate in life"
+    />
+  </ul>
 </Layout>
