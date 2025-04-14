@@ -2,7 +2,7 @@ export const ResumeSummary = {
   name: "Tran Van Do",
   workedSince: "May 01 2018",
   title: ".NET Developer",
-  profilePicture: "profile-picture.jpg",
+  profilePicture: "/profile-picture.jpg",
   contact: {
     address: "Ho Chi Minh, Viet Nam",
     phone: "+84 774 276 286",
