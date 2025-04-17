@@ -7,7 +7,7 @@
   --email-text-color: oklch(51.4% 0.222 16.935);
   --email-font-size: 18px;
   --background-dark: #1e1e2e;
-  --background-light: #fcebf3;
+  --background-light: #fafafa;
   --button: #78c2ad;
   --text-dark: #fafafa;
   --text-light: #1e1e2e;
@@ -395,8 +395,8 @@ html.dark {
   }
 }
 
-.email{
- color: var(--email-text-color);
- font-weight: bold;
- font-size: var(--email-font-size);
+.email {
+  color: var(--email-text-color);
+  font-weight: bold;
+  font-size: var(--email-font-size);
 }
