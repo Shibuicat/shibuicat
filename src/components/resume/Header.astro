@@ -8,25 +8,6 @@ interface Props {
 }
 
 const { profilePicture, name, title, workedSince } = Astro.props;
-const currentDate: any = new Date();
-const startDate: any = new Date(workedSince);
-const diffTime: number = Math.abs(currentDate - startDate);
-const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
-
-const totalYears = Math.floor(diffDays / 365);
-const totalMonths = Math.floor(Math.floor(diffDays % 365) / 30);
-
-const yoeText = function () {
-  if (totalYears == 0) {
-    return `${totalMonths} Months`;
-  } else {
-    if (totalMonths == 0) {
-      return `${totalYears} Years`;
-    }
-
-    return `${totalYears} Years ${totalMonths} Months`;
-  }
-};
 ---
 
 <div
@@ -46,7 +27,34 @@ const yoeText = function () {
       <span class="text-gradient">{title}</span>
     </div>
     <div class="text-xl">
-      <span class="text-xl">{yoeText()} of experience</span>
+      <span class="text-xl" id="yoeText"></span>
     </div>
   </div>
 </div>
+
+<script>
+  import { ResumeSummary } from "../../models/resumse-summarize";
+  const currentDate: any = new Date();
+  const startDate: any = new Date(ResumeSummary.workedSince);
+  const diffTime = Math.abs(currentDate - startDate);
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+  const totalYears = Math.floor(diffDays / 365);
+  const totalMonths = Math.floor(Math.floor(diffDays % 365) / 30);
+
+  const yoeText = function () {
+    if (totalYears == 0) {
+      return `${totalMonths} Months`;
+    } else {
+      if (totalMonths == 0) {
+        return `${totalYears} Years`;
+      }
+
+      return `${totalYears} Years ${totalMonths} Months`;
+    }
+  };
+
+  const yoeTextElement = document.getElementById("yoeText");
+
+  yoeTextElement.innerText = `${yoeText()} of experience`;
+</script>
