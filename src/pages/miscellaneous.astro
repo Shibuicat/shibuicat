@@ -1,0 +1,22 @@
+---
+import { ProjectList } from "../components/miscellaneous/project-list";
+import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "Miscellaneous";
+---
+
+<Layout pageTitle={pageTitle}>
+  <div>
+    <h1>Miscellaneous</h1>
+    <p>
+      This is a collection of random thoughts, ideas, and projects that don't
+      fit into any specific category. It's a place for me to share my
+      experimentation and exploration of different topics.
+    </p>
+    <p>I hope you find something interesting or inspiring here!</p>
+
+    <br />
+
+    <ProjectList />
+  </div>
+</Layout>
