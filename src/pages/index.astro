@@ -6,6 +6,17 @@ const pageTitle = "Shibuicat";
 
 const myStatuses: Status[] = [
   {
+    date: new Date("2025-06-01"),
+    content: `I was serious about the project at the time but didn't follow trough, I'm coming back to check in, even if the project doesn't go anywhere, I still have something to look at and know what I did wrong, right It's me didn't put in all the work required`,
+  },
+  {
+    date: new Date("08 April 2025"),
+    content: `It's kinda weird that the introduction of this website didn't exist till
+        3 months later, i didn't really know what i wanted to do with this website
+        and didn't have a clue where i was heading at the time. However, I sense
+        which direction that i want to go now, part of it is because i have consumed too much, it's time to create something and show it to the world.`,
+  },
+  {
     date: new Date("2025-01-01"),
     content: `Being a software developer, i usually find myself struggling create real
         value in life. What's the point of all the OOP, SOLID, Microservices... when
@@ -28,14 +39,12 @@ const getOpacity = (date: Date) => {
 };
 
 const calculateOpacity = (n: number) => {
-  console.log("initial day diff", n);
   if (n < 60) return 100;
 
   const steps = Math.floor((n - 60) / 30);
   const reduction = steps * 10;
   const value = 100 - reduction;
 
-  console.log("calculated opacity: ", value);
   return Math.max(value, 20);
 };
 
@@ -67,21 +76,6 @@ const getDayDiff = (date1: any, date2: any) => {
 
 <Layout pageTitle={pageTitle}>
   <div class="flex-col flex justify-center items-center gap-4">
-    <div
-      class={`container my-auto rounded-2xl overflow-hidden shadow-lg bg-rose-600 dark:bg-amber-600 p-5`}
-    >
-      <p>
-        <b>08 April 2025</b>
-        It's kinda weird that the introduction of this website didn't exist till
-        3 months later, i really didn't know what i wanted to do with this website
-        and didn't have a clue where i was heading at the time. However, I sense
-        which direction that i want to go now.
-      </p>
-      <p>
-        So, I decided that i'm done with consuming. This is kinda like my
-        personal space where i create stuffs and share it with the world.
-      </p>
-    </div>
     {
       myStatuses.map((x) => (
         <div

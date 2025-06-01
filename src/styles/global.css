@@ -8,6 +8,8 @@
   --email-font-size: 18px;
   --background-dark: #1e1e2e;
   --background-light: #fafafa;
+  --select-text-background: oklch(70.5% 0.213 47.604);
+  --select-text-background-dark: oklch(27.4% 0.006 286.033);
   --button: #78c2ad;
   --text-dark: #fafafa;
   --text-light: #1e1e2e;
@@ -404,4 +406,12 @@ html.dark {
   color: var(--email-text-color);
   font-weight: bold;
   font-size: var(--email-font-size);
+}
+
+*::selection {
+  background: var(--select-text-background);
+}
+
+.dark *::selection {
+  background: var(--select-text-background-dark);
 }
