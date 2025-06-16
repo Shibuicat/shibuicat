@@ -25,7 +25,16 @@ const { pageTitle } = Astro.props;
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap"
       as="style"
       onload="this.onload=null;this.rel='stylesheet'"
-    />
+    /> 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7GPSGF3PL8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7GPSGF3PL8');
+    </script>
     <noscript
       ><link
         href="https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Pacifico&display=swap"
