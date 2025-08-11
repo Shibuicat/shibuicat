@@ -1,12 +1,15 @@
-export const Project = () => {
+import type { ProjectInfo } from "../../models/project.model";
+
+type ProjectProps = ProjectInfo;
+
+export const Project = (props: ProjectInfo) => {
     return (
         <div>
-            <h2 className="projec">
-                <a href="https://hwnhwn.shibuicat.com">Hwn Hwn</a>
+            <h2 className="project">
+                <a href={props.link}>{props.name}</a>
             </h2>
             <p>
-                Hwn Hwn is a project that i started for fun because my friend sent me some
-                stickers. I wanted to find a way to make them appealing.
+                {props.description}
             </p>
         </div>
     )

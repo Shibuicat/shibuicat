@@ -1,8 +1,30 @@
 ---
 import { ProjectList } from "../components/miscellaneous/project-list";
 import Layout from "../layouts/Layout.astro";
+import { type ProjectInfo } from "../models/project.model";
 
 const pageTitle = "Miscellaneous";
+
+const projects: ProjectInfo[] = [
+  {
+    name: "Hwn Hwn",
+    description:
+      "Hwn Hwn is a project that i started for fun because my friend sent me some stickers. I wanted to find a way to make them appealing.",
+    link: "https://hwnhwn.shibuicat.com",
+  },
+  {
+    name: "Shibuicat",
+    description:
+      "It's this website you're currently on! A personal project to showcase my work and thoughts.",
+    link: "https://shibuicat.com",
+  },
+  {
+    name: "Shibui Blog",
+    description:
+      "A blog where I share my thoughts, ideas, and projects. It's a place for me to write about things that interest me and to connect with others.",
+    link: "https://blog.shibuicat.com",
+  },
+];
 ---
 
 <Layout pageTitle={pageTitle}>
@@ -17,6 +39,6 @@ const pageTitle = "Miscellaneous";
 
     <br />
 
-    <ProjectList />
+    <ProjectList projects={projects} />
   </div>
 </Layout>
